@@ -11,7 +11,7 @@ jobs:
 
 # this is the name of the job
  greet:
-  # this is github runner
+  # this is GitHub runner
   runs-on: ubuntu-latest
   steps:
     - name: say hello to users 
@@ -19,3 +19,9 @@ jobs:
 
     - name: say hello to username
       run: echo "hello $(whoami)"
+
+ details:
+    runs-on: ubuntu-latest
+    steps:
+      - name:  version of Python, Docker, etc
+        run: docker --version && python --version

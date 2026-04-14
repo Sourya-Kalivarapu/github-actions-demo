@@ -4,6 +4,16 @@ name: CICD
 # Manual click (deliver) workflow whenever user needs
 on: 
   workflow_dispatch:
+    inputs:
+      environments:
+        description: This is the environment where the workflow runs
+        default: 'dev'
+        required: true
+        type: choice
+        options:
+          - dev
+          - prod
+          - staging
 
 jobs:
   # Every job needs a separate runner: it's called parallelism 

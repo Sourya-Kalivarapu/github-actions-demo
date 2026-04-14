@@ -1,34 +1,279 @@
-# making changes
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sri Sourya | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e2e8f0;
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+nav a {
+    color: #38bdf8;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #020617, #0f172a);
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+.typing {
+    margin-top: 15px;
+    font-size: 1.3rem;
+    border-right: 2px solid #38bdf8;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* SECTIONS */
+section {
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #38bdf8;
+    display: inline-block;
+}
+
+/* PROJECTS */
+.project {
+    background: rgba(30, 41, 59, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    background: #38bdf8;
+    color: #020617;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* SKILLS */
+.skill {
+    margin-bottom: 15px;
+}
+
+.bar {
+    height: 8px;
+    background: #1e293b;
+    border-radius: 10px;
+}
+
+.fill {
+    height: 100%;
+    background: #38bdf8;
+    border-radius: 10px;
+    width: 0;
+    transition: 1.5s;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid #38bdf8;
+    padding-left: 20px;
+}
+
+.timeline div {
+    margin-bottom: 20px;
+}
+
+/* FADE */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>[Your Name]</h1>
-        <p>Web Developer</p>
-    </header>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Passionate developer creating web solutions.</p>
-        </section>
+<nav>
+    <div><strong>Sourya</strong></div>
+    <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project A</h3>
-                <p>Description of project.</p>
-            </div>
-        </section>
-    </main>
+<section class="hero">
+    <h1>Hi, I'm <span>Sri Sourya</span></h1>
+    <div class="typing" id="typing"></div>
+</section>
 
-    <footer>
-        <p>Contact: email@example.com</p>
-    </footer>
+<section id="about" class="fade">
+    <h2>About Me</h2>
+    <p>
+        Data Migration Engineer with 4.5 years of experience in enterprise data systems.
+        AWS Certified and actively transitioning into Cloud & AI.
+    </p>
+</section>
+
+<section id="skills" class="fade">
+    <h2>Skills</h2>
+
+    <div class="skill">
+        AWS
+        <div class="bar"><div class="fill" style="width: 90%"></div></div>
+    </div>
+
+    <div class="skill">
+        SQL / Databases
+        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+    </div>
+
+    <div class="skill">
+        Docker
+        <div class="bar"><div class="fill" style="width: 65%"></div></div>
+    </div>
+
+</section>
+
+<section id="experience" class="fade">
+    <h2>Experience</h2>
+    <div class="timeline">
+        <div>
+            <h3>TCS</h3>
+            <p>Data Migration Engineer - Present</p>
+        </div>
+        <div>
+            <h3>Infosys</h3>
+            <p>Software Engineer</p>
+        </div>
+        <div>
+            <h3>Capgemini</h3>
+            <p>Associate Consultant</p>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="fade">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>AI Bank App</h3>
+        <p>Dockerized banking app with CI/CD pipeline.</p>
+        <a class="btn" href="#">GitHub</a>
+    </div>
+
+    <div class="project">
+        <h3>Data Migration Automation</h3>
+        <p>Automated large-scale migration workflows.</p>
+        <a class="btn" href="#">GitHub</a>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Sri Sourya 🚀</p>
+</footer>
+
+<script>
+// Typing animation
+const text = ["Cloud Engineer", "AWS Certified", "AI Enthusiast"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+    current = text[i];
+    
+    if (!isDeleting) {
+        document.getElementById("typing").textContent = current.substring(0, j++);
+        if (j > current.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+        }
+    } else {
+        document.getElementById("typing").textContent = current.substring(0, j--);
+        if (j === 0) {
+            isDeleting = false;
+            i = (i + 1) % text.length;
+        }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+
+// Fade animation
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    });
+});
+document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

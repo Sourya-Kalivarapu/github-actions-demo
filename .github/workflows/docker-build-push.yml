@@ -17,13 +17,13 @@ jobs:
               with:
                 username: ${{ vars.DOCKERHUB_USER }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
-
-            - name: Build & push to Docker Hub
+                
+            - name: Build & Push to Docker Hub
               uses: docker/build-push-action@v6
               with:
                 context: .
                 push: true
                 tags: |
-                    ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.ref}}
+                    ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.ref_name }}
                     ${{ vars.DOCKERHUB_USER }}/github-actions-app:latest
-                    ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha }}
+                    ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha}}

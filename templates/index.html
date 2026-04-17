@@ -63,12 +63,24 @@
             font-size: 1.25rem;
             color: #f9fafb;
         }
+
+        /* 👇 NEW: pipeline section */
+        .pipeline {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #a5b4fc;
+        }
+        .pipeline span {
+            margin: 0 0.5rem;
+            color: #7b2ff7;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>DevOps Zero To Hero</h1>
         <div class="badge">Josh Batch 10</div>
+
         <div class="cards">
             <div class="card">
                 <span>Framework</span>
@@ -80,9 +92,15 @@
             </div>
             <div class="card">
                 <span>Deploy</span>
-                <strong>AWS ECS</strong>
+                <strong>AWS EC2</strong>
             </div>
         </div>
+
+
+        <div class="pipeline">
+            ⚙️ Built <span>→</span> Tested (Lint ✔) <span>→</span> Deployed via GitHub Actions 🚀
+        </div>
+
     </div>
 </body>
 </html>

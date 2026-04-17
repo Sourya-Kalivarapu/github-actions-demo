@@ -9,7 +9,7 @@ jobs:
             DOCKERHUB_USER: ${{ vars.DOCKERHUB_USER }}
         runs-on: self-hosted  
         steps:
-            - name: Code Checkout
+            - name: checkout code
               uses: actions/checkout@v4
 
             - name: Deploy with docker compose

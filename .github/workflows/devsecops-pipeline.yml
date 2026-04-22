@@ -11,7 +11,7 @@ jobs:
 
     secrets-scan:
         uses: ./.github/workflows/secrets-scan.yml
-    
+        secrets: inherit
     
     dependency-scan:
         uses: ./.github/workflows/dependency-scan.yml
@@ -19,24 +19,9 @@ jobs:
     docker-scan:
         uses: ./.github/workflows/docker-lint.yml
 
-    # tests:
-    #     uses: ./.github/workflows/tests.yml
-
-     # Build once the security scans and tests are complete
-     build:
-        needs: [code-quality, secrets-scan, dependency-scan, docker-scan, tests]
+     # Build once the security scans are complete
+    build:
+        needs: [code-quality, secrets-scan, dependency-scan, docker-scan]
         uses: ./.github/workflows/docker-build-push.yml
 
-    # # Image scan 
-    # trivy:
-    #     needs: [build]
-    #     uses: ./.github/workflows/image-scan.yml
-    #     secrets: inherit
-
-    # # CD : Deploy to Production 
-    # deploy:
-    #     needs: [trivy]
-    #     uses: ./.github/workflows/deploy-to-server.yml
-    #     secrets: inherit
-
-    
+   

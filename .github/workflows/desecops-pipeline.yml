@@ -19,16 +19,25 @@ jobs:
     docker-scan:
         uses: ./.github/workflows/docker-lint.yml
 
-     # Build once the security scans are complete
+    tests:
+        uses: ./.github/workflows/tests.yml
+
+    # Build once the security scans and tests are complete
     build:
-        needs: [code-quality, secrets-scan, dependency-scan, docker-scan]
+        needs: [code-quality, secrets-scan, dependency-scan, docker-scan, tests]
         uses: ./.github/workflows/docker-build-push.yml
         secrets: inherit
-        
+
     # Image scan 
     trivy:
         needs: [build]
         uses: ./.github/workflows/image-scan.yml
         secrets: inherit
 
-        
+    # CD : Deploy to Production 
+    deploy:
+        needs: [trivy]
+        uses: ./.github/workflows/deploy-to-server.yml
+        secrets: inherit
+
+    

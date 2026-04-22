@@ -22,11 +22,10 @@ jobs:
     # tests:
     #     uses: ./.github/workflows/tests.yml
 
-    # # Build once the security scans and tests are complete
-    # build:
-    #     needs: [code-quality, secrets-scan, dependency-scan, docker-scan, tests]
-    #     uses: ./.github/workflows/docker-build-push.yml
-    #     secrets: inherit
+     # Build once the security scans and tests are complete
+     build:
+        needs: [code-quality, secrets-scan, dependency-scan, docker-scan, tests]
+        uses: ./.github/workflows/docker-build-push.yml
 
     # # Image scan 
     # trivy:

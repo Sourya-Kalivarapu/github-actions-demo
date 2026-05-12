@@ -1,4 +1,4 @@
-# packages - issues ya vulnerabilities (scan)
+# packages - issues or  vulnerabilities (scan)
 # pip-audit
 
 name: Dependency Scan

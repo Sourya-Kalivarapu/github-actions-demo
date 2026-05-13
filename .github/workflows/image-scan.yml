@@ -18,6 +18,10 @@ jobs:
                 username: ${{ vars.DOCKERHUB_USER }}
                 password: ${{ secrets.DOCKERHUB_TOKEN }}
             
+            - name: Build Docker Image
+              run: |
+                 docker build -t ${{ vars.DOCKERHUB_USER }}/github-actions-app:${{ github.sha }} .    
+
             - name: Trivy Scanner
               uses: aquasecurity/trivy-action@0.35.0
               with:
